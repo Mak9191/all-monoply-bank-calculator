@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="\style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <title>My To List</title>
+  </head>
+  <body>
+    <!-- ----------------- First Player Section Begin -------------------------------- -->
+    <section class="startPage">
+      <div id="startpara">
+        <p>How many Players:</p>
+        <div class="allbtns">
+          <button onclick="ChossedPlayer2()" class="playerNumber">2</button
+          ><button class="playerNumber" onclick="ChossedPlayer3()">3</button
+          ><button onclick="ChossedPlayer4()" class="playerNumber">4</button
+          ><button onclick="ChossedPlayer5()" class="playerNumber">5</button
+          ><button onclick="ChossedPlayer6()" class="playerNumber">6</button>
+        </div>
+      </div>
+    </section>
+    <!-- -------------------------First Player Section Ends ------------------------------------->
+    <!----------------------------Second Page Section Start --------------------------------------->
+    <section class="namingPlayers unshow">
+      <div id="EntirePlayerbox"></div>
+      <div style="margin: auto; width: 10%">
+        <button
+          id="Submit"
+          onclick="submitClicked()"
+          onmouseenter="hoverSubmitin()"
+          onmouseout="hoverSubmitout()"
+        >
+          Submit
+        </button>
+      </div>
+    </section>
+
+    <!----------------------------Second Page Section Ends --------------------------------------->
+    <!----------------------------Button Show Section Start --------------------------------------->
+    <section class="btnshows unshow">
+      <div class="btnspage">
+        <h3>Enter the amount</h3>
+        <input
+          class="sendingamt"
+          id="sendingamtid"
+          type="number"
+          min="0"
+          value="0"
+          oninput="validity.valid||(value='');"
+        />
+        <button class="btn" onclick="savingamt()">Save</button>
+      </div>
+      <div id="ChoicePlayer" class="allbtns">
+        <!-- <button onclick="ChossedPlayer2()" class="playerNumber">2</button> -->
+      </div>
+    </section>
+    <!----------------------------Button Show Section Ends --------------------------------------->
+    <!----------------------------Buying Place Section Start--------------------------------------->
+    <section id="placingid" class="placingid unshow">
+      <div class="placingclass">
+        <div>
+          <h3>Enter Place Name</h3>
+          <input type="text" class="placeinput" id="placeinputid" />
+          <button
+            class="btn"
+            style="margin: 0px"
+            id="confirm1"
+            onclick="confirming1()"
+          >
+            Confirm
+          </button>
+        </div>
+        <div>
+          <h3>Enter the Amount</h3>
+          <input type="number" min="0" oninput="validity.valid||(value='');" id="placeamount" />
+          <button
+            class="btn"
+            style="margin: 0px"
+            id="confirm2"
+            onclick="confirming2()"
+          >
+            Confirm
+          </button>
+        </div>
+      </div>
+      <div id="Buybtn">
+        <button onclick="ChossedPlayer2()" class="playerNumber">Cancel</button>
+      </div>
+    </section>
+    <!----------------------------Buying Place Section End------------------------------------------------>
+    <!--------------------------- Selling Place Section Start -------------------------------------------->
+    <section id="Sellin_Place" class="Sellin_PlaceClass unshow">
+      <button id="cancel_Transaction" onclick="cancelTransaction()">
+        Cancel Transaction
+      </button>
+      <div>
+        <h3>Which place You want to sell?</h3>
+        <div class="allplaceslist" id="allplaceslistId"></div>
+      </div>
+      <div>
+        <h3>To Whom You Want to Sell</h3>
+        <div class="allplayerList" id="allplayerListId">
+        </div>
+        <button id= "SellingtoBankId" class="btn" onclick="SellingtoBank()">To Bank</button>
+      </div>
+      <div>
+        <button id="SoldId" disabled="true" class="btn" onclick="Sold()">
+          Sell
+        </button>
+      </div>
+    </section>
+    <!--------------------------- Selling Place Section End  -------------------------------------------->
+    <!-- ------------------------ Player Game Section  Start  -------------------------------------------->
+    <section id="enitrePlayerPage" class="enitrePlayerPage1 unshow">
+      <section id="navbar">
+        <nav>
+          <ul>
+            <li><button class="navbar_button" onclick="refreshPage()">New Game</button></li>
+            <li><button class= "navbar_button" onclick="shortList()">Shortlist Player</button></li>
+            <li><button class= "navbar_button" onclick="annoucingWinner()">Annouce the Winner</button></li>
+          </ul>
+        </nav>
+      </section>
+      <section class="bank">
+        <div>
+          <span>Left Amount</span>
+          <span id="bankamt">3000</span>
+        </div>
+      </section>
+      <section class="entirePlayer"></section>
+    </section>
+    
+    <section id="winnersect" class="unshow"> 
+      <div id="windiv"class= "startPage ">
+        
+      </div>
+    </section>
+    <!-- ---------------------------------Player Game section Ends------------------ -->
+  </body>
+  <script src="\script.js"></script>
+</html>
